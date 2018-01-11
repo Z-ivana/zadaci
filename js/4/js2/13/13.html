@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadatak 4-js2-13 </title>
+</head>
+<body>
+    <script>
+        // __13__ napišite funkciju koja radi isto što i Math.ceil() bez korišćenja Math.ceil()
+var MathCeil=(function (number) {
+    number= parseInt(number)+1;
+    return number;
+})(13.32);
+    console.log("MathCeil: "+MathCeil);
+
+// __13__ napišite funkciju koja radi isto što i Math.round() bez korišćenja Math.round()
+var MathRound=(function (number) {
+    var broj;
+    number=number.toString();           console.log("number  "+number);
+    var niz=number.split(".");
+    var ostatak=niz[1];                 console.log("ostatak  "+ostatak);
+    var nizOstatka=ostatak.split("");   console.log("nizOstatka  "+nizOstatka);            
+    var brojCifara=ostatak.length;      console.log("brojCifara  "+brojCifara);
+    var prvaCifra=ostatak.substr(0,1);  console.log("prvaCifra  "+prvaCifra);
+
+    for(var i=0;i<nizOstatka.length;i++){
+        if (nizOstatka.length==1 && nizOstatka[i]==5 && niz[0]%2==0)   broj=parseInt(niz[0]);
+        else if (nizOstatka.length==1 && nizOstatka[i]==5 && niz[0]%2!=0)   broj=parseInt(niz[0])+1
+        else if (nizOstatka[i]>=5) broj=parseInt(niz[0])+1;
+        else broj=parseInt(niz[0]);
+    
+    }
+    return broj;
+})(11.5);
+console.log("MathRound ###### "+MathRound);
+
+// __13__ napišite funkciju koja radi isto što i Math.floor() bez korišćenja Math.floor()
+var MathFloor=(function (number) {
+    number= parseInt(number);
+    return number;
+})(1.55);
+    console.log("MathFloor: "+MathFloor);
+
+        
+        
+    </script>
+    
+</body>
+</html>

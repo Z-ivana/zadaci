@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadatak 4-js2-8</title>
+    <style>
+    
+    
+    </style>
+</head>
+<body>
+
+    <script>
+        
+    var randomNeparan=(function (limit) {
+       var broj=Math.floor(Math.random()*limit);
+        if(broj%2!=0)console.log(broj);
+        else console.log(broj+1);
+       
+    })(1000);
+
+    var radnomBroj= (function (odBroja,doBroja) {
+        return Math.floor(Math.random()*(doBroja+1-odBroja)+odBroja);        
+        
+    })(99,999);
+
+    var randomDesetocifreni= (function (){
+        var min=1e9;
+        var max=1e10;
+        return Math.floor(Math.random()*(max-min)+min);  
+    })();
+    
+
+
+
+    </script>
+    
+</body>
+</html>

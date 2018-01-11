@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadatak 4-js2-14 </title>
+</head>
+<body>
+    <script>
+        // __14__ napišite funkciju koja radi isto što substr bez korišćenja substr()
+
+    var subStr=(function (string,start,length) {
+        var niz=string.split("");   console.log("niz  "+niz);
+        var pomNiz=[];
+        var noviString
+        for (var i = start; i <= length; i++) {
+            pomNiz.push(niz[i]);   
+        }
+        console.log("pomNiz  "+pomNiz);
+        
+        return pomNiz.join("");
+       
+        })("neki text",1,6);
+    console.log(subStr);
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadatak 4-js1-9.1</title>
+    <style>
+    
+    
+    </style>
+</head>
+<body>
+
+
+
+    <script>
+        // navigator.userAgent definise koji pretrazivac se koristi
+        /*napravite objekat "statistika", svaki put kad korisnik poseti stranicu neka se u localStorage upiše adresa stranice i broj poseta
+         (prvi put 1, drugi put 2 s tim što drugi put neće ponovo upisati stranicu već će samo povećati za 1 za element niza)*/
+
+
+
+
+
+       var kreirajStatistiku=(function () {
+        var statistika=localStorage.getItem("statistika");
+         if(statistika==null){
+              statistika=[];
+                }
+                
+            //console.log(statistika);
+                
+            return statistika;
+
+      })();
+        
+        //console.log("statistika: "+kreirajStatistiku);
+
+
+        var addNewObject= (function(){
+            var objekat={};
+
+            objekat.adresa=location.href;
+            //console.log("adresa: "+objekat.adresa);
+            
+            objekat.brojPoseta=1;
+            //console.log("broj Poseta: "+objekat.brojPoseta);
+            
+
+
+            //console.log(objekat);
+            
+            return objekat;
+           
+        })();
+        
+        kreirajStatistiku;
+        addNewObject;
+        console.log(statistika[0]=objekat);
+        
+
+        
+        
+
+        
+
+
+        
+/*
+        var saveToDatabase=(function (type,json){
+            var myJSON = JSON.stringify(json);
+            localStorage.setItem(type, myJSON);   
+        })("statistika",statistika);
+
+
+*/
+        
+        
+    </script>
+    
+</body>
+</html>

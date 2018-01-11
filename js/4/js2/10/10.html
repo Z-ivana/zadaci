@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Zadatak 4-js2-10</title>
+</head>
+<body>
+    <script>
+    
+    function zadnjiKarakteri(string,brojKaraktera) {
+        return string.substring(string.length-brojKaraktera,string.length);       
+    };
+    console.log("zadnja tri karaktera: "+zadnjiKarakteri("neki string",3));
+
+    function prviKarakteri(string,brojKaraktera) {
+        return string.substr(0,brojKaraktera);
+    }
+    console.log("prva tri karaktera: "+prviKarakteri("neki string",3));
+   
+    function karakteriOdDo(string, odKaraktera, doKaraktera) {
+        return string.substring(odKaraktera-1,doKaraktera);
+    }
+    console.log("od 2 do 7 karaktera: "+karakteriOdDo("Neki string",2,7));
+
+    function prvoPojavljivanje(karakter,string) {
+        return string.indexOf(karakter)+1;
+    }
+    console.log("prvo pojvljivanje karaktera a u Java Script:  "+prvoPojavljivanje("a","JavaScript"));
+
+    function brojPojavljivanje(karakter,string){
+     var broj;
+     var zbir=0;
+        while (broj!=0) {
+
+            broj=string.indexOf(karakter)+1;
+            console.log("broj"+broj);
+
+            string=string.substr(broj,string.length-broj);
+            console.log("string:  "+string);
+            
+            if(broj != 0){
+                broj=1;
+                zbir+=broj;
+            }  
+        }
+        return zbir;
+
+    }
+    console.log("broj pojavljivanja a u java script: "+brojPojavljivanje("a","JavaScript"));
+
+    function brojPojavljivanjeZanemariVelicinu(karakter,string) {
+        string=string.toLowerCase();
+        karakter=karakter.toLowerCase();
+        var broj;
+        var zbir=0;
+        while (broj!=0) {
+
+            broj=string.indexOf(karakter)+1;
+            console.log("broj"+broj);
+
+            string=string.substr(broj,string.length-broj);
+            console.log("string:  "+string);
+            
+            if(broj != 0){
+                broj=1;
+                zbir+=broj;
+            }  
+        }
+        return zbir;
+    }
+    console.log("zanemari velicinu:  "+brojPojavljivanjeZanemariVelicinu("A","JAvaScript"));
+
+
+    function brojSlovaUStringu(string){
+        var zbir=0;
+        for (var i=0; i<string.length; i++)
+        {
+            var kod=string.charCodeAt(i);
+            if((kod>=65 && kod<=90) || (kod>=97 && kod<=122)) zbir++;
+        }
+        return zbir;
+    }   
+   console.log("broj slov u stringu: "+brojSlovaUStringu("Kako si? 2 i 2 su 5"));
+   
+   function zameni(slovo1,slovo2,string){
+    var noviString="";
+        for ( var i=0; i<string.length; i++){
+            if (string.charAt(i)==slovo1)   noviString+=slovo2;
+            else     noviString+=string.charAt(i);
+        }
+        return noviString;
+    }
+    console.log("zameni slovo a sa slovom f: "+zameni("a","f","JavaScript"));
+
+    function izbrisiRazmake(string){
+        while(string.charAt(0)==" ")    string=string.substr(1,(string.length-2));
+        
+        while(string.charAt(string.length-1)==" ")  string=string.substr(0,string.length-1);
+        
+        return string;
+    }
+    
+    console.log("izbrisi razmake: "+izbrisiRazmake("    ovo je text sa razmacima razmacima       "));
+
+    function loto(kolikoBrojeva,limit) {
+        var nizBrojeva=[];
+        var broj;
+        while(nizBrojeva.length < kolikoBrojeva){
+            broj=Math.ceil(Math.random()*limit);
+            nizBrojeva.push(broj);
+        }
+        return nizBrojeva;
+    }
+   console.log("brojevi za loto: "+ loto(6,36));
+   
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadatak 4-js2-12 </title>
+    <style>
+    
+    
+    </style>
+</head>
+<body>
+
+    <script>
+//  * __12__ napišite funkciju koja vraća random broj bez korišćenja Math.random()
+        var randomBroj=( function () {
+
+                var d=new Date;  
+                var broj=d.getSeconds();
+                broj%=10;
+            return broj;          
+        }());
+       console.log(randomBroj);       
+        
+    </script>
+    
+</body>
+</html>

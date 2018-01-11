@@ -1,0 +1,46 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadatak 4-js2-6</title>
+    <style>
+    
+    
+    </style>
+</head>
+<body>
+
+    <script>
+/** __6__ Napišite 3 for petlje ugnježđene jednu u drugoj prva neka ispisuje parne brojeve, druga neka 
+ * ispisuje neparne brojeve, treća neka ispisuje brojeve deljive sa 3. kad se desi da su sva 3 broja ista 
+ * neka petlja ispiše: "nađen broj X u sve 3 for petlje"
+*/
+var limit=10;
+for(var i=0;i<limit;i++){
+    if(i%2==0) console.log("i: ",i);
+    for(var j=0;j<limit;j++){
+        if(j%2!=0)  console.log("j: ",j);
+        for(var k=0;k<limit;k++){
+            if(k%3==0) console.log("k: ",k); 
+            if(i==j && j==k){
+            console.log("nađen broj X u sve 3 for petlje");          
+            }    
+        }  
+    }
+
+}
+//Napišite 2 ugnježđene while petlje, sami smislite šta će da rade
+var i=1;
+while (i<=10) {
+    var j=1;
+    while (j<=i) {
+
+        console.log("za svako i manje od 10 j od 0 do i: "+j);
+        j++;   
+    }
+    i++;
+}
+    </script>
+    
+</body>
+</html>

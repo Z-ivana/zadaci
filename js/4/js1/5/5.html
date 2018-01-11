@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Isprobavanje</title>
+    <style>
+    
+    
+    </style>
+</head>
+<body>
+    <div id="inner"></div>
+    <form action="">
+            <label for="text"></label>
+            <input type="text" name="text" id="text">
+    </form>
+    <div id="textContent"></div>
+    <div id="insert"></div>
+
+    <script>
+        /* __5__ Ispišite tekst "Zdravo" korišćenjem: 
+    * alert
+    * console.log
+    * innerHTML
+    * value
+    * textContent
+    * insertAdjacentHTML
+    */
+
+    document.getElementById("text").value="Zdravo!!!!";
+    alert("Zdravo!")
+    console.log("Zdravo!!");
+    document.getElementById("inner").innerHTML="Zdravo!!!";
+    document.getElementById("textContent").textContent="Zdravo!!!!!";
+    document.body.insertAdjacentHTML("beforeend","poslednji Zdravo!");
+
+
+
+    
+
+    
+        
+        
+    </script>
+    
+</body>
+</html>

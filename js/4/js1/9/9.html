@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadatak 4-js1-9</title>
+    <style>
+    
+    
+    </style>
+</head>
+<body>
+        <a href="?a=5">Link 1</a> 
+        <a href="?g=5">Link 2</a> 
+        <a href="?bbb">Link 3</a> 
+        <a href="?cccc">Link 4</a> 
+        <a href="?ddd">Link 5</a> 
+        <a href="?eee">Link 6</a> 
+        <a href="?f=5">Link 7</a> 
+    <script>
+
+        var statistika=JSON.parse(localStorage.getItem("statistika"));
+        var objekat={};
+        var postoji=false;
+
+        if(statistika == null){
+            statistika=[];
+        }
+
+        objekat.adresa=location.href;
+        objekat.brojPoseta=1;
+        
+
+        for (var i = 0; i < statistika.length; i++) {
+            if(statistika[i].adresa == location.href){
+               statistika[i].brojPoseta+=1;
+                postoji=true;
+            }
+        }
+
+        if(postoji==false){
+            statistika.push(objekat);
+        }
+        localStorage.setItem("statistika",JSON.stringify(statistika));
+
+    </script>
+    
+</body>
+</html>
