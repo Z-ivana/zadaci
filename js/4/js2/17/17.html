@@ -8,12 +8,33 @@
     <script>
 //Napišite funkciju koja broji koliko ima subota u trenutnoj godini
 function brojSubota(){
-    var d=new Date;
-
     
-
-
+    var d=new Date("2018-01-01");
+    var dan=d.getDay();
+    console.log(dan);
+    var subota;
+    if(dan==6){
+        subota=1;
+    }
+    else if(dan<6){
+        dan+=(6-dan);
+        subota=1;
+    }
+    else {
+        dan+=6;
+        subota=1;
+    }
+    console.log(dan);
+    console.log(subota);
+    
+for(var i=dan;i<365;i+=7){
+    subota++
 }
+  console.log(subota);
+   
+}
+
+
 brojSubota();
         
         
