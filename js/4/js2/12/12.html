@@ -15,8 +15,11 @@
         var randomBroj=( function () {
 
                 var d=new Date;  
-                var broj=d.getSeconds();
-                broj%=10;
+                var broj=d.getMilliseconds();
+                console.log("broj: "+broj);
+                broj=Math.floor((broj/=10)+1)
+                console.log("random brojdo 100:  "+broj);
+
             return broj;          
         }());
        console.log(randomBroj);       
