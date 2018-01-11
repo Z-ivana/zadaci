@@ -9,11 +9,41 @@
     /* __18__ Napravite funkciju koja izbacuje random srpsko ime, ako joj ne prosledimo nijedan parametar treba da 
 vrati bilo muško ili žensko ime, ako mu prosledimo broj 1 neka vrati muško ime, ako prosledimo 2 neka vrati žensko,
  mora biti bar 500 imena ponuđeno*/
- 
-        
-        
-    </script>
-    
+
+var stringZenskaImena="Avdana, Avrama, Aglija, Agripina, Ajdana, Aleksandrija, Aleksija, Alinka, Alka, Ana, Anastasija,Angelina,  Anđa,  Anđelija, Anica, Anka, Anovka, Avola, Antonija, Armenka, Arhanđa, Ata, Atanasija,Beža, Bela, Bogosava,Božana, Božica, Boja, Bojka, Bosanka, Bosiljka, Budimira, Budimka,Valada, Vara, Varvara, Vasilija, Vezilja, Velija,Velika, Velisava, Velka, Veljana, Vera, Vesela, Vida, Vidica, Vidna, Vinka, Višnja, Vladislava, Vlatka, Vojana, Vojka,Vujana, Vujača, Vujina, Vujka, Vuka, Vukava, Vukana, Vukna, Vukosava, Vučica, Vučka,Galica,  Gvozda, Gvozdana,Gvozdenija, Gdunja, Gojana, Gojka,  Gospava, Građa,  Građanka, Grdana, Grkinja, Grlja,  Grobna, Grozda, Grozdana,  Gromna,GrubnaDabiživa, Davida, Dajka, Damijana, Danica, Danka, Dafina, Dvorka, Dvorna, Deva, Devka, Dejana, Despina, Divna,Dijana, Dika, Dikla, Dikosava, Dionisija, Djeva, Djevka, Dmija, Dmitra, Dobra, Dobrija, Dobrosava, Dova, Doja, Dojka,Doka, Donka, Dora, Dorjana, Doroteja, Dosta, Dostana, Dragna, Dragojla, Draguja, Draja, Drajka, Drinjanka, Duda, Dubna,Dunja,Đenka, Đerdana, Đermana, Đermanka, Đeruša, Đinđa, Đuka, Đurđa, Đurđija, ĐurisavaŽivka, Živana, Živkana, Živna,Zagorka, Zvezda, Zvena, Zvenija, Zlatana, Zlatna, Zoja, Zorana, Zorka, Zrinka,Ivana, Ivanica, Ivka, Ikonija, Ilana,Ilijana, Ilinka, Ilka, Ilojka, Ina, Inđa, Inđelija, Inđija, Irina, Isidora, Istija,Jageta, Jagla, Jaglika, Jagnija,Jagoda, Jakova, Jana, Janija, Janisa, Janisija, Janica, Janka, Janojla, Janoka, Janoša, Januša, Janča, Janja, Jarmenka,Jasa, Jasna, Jaćima, Jeva, Jevdokija, Jevrejka, Jevrosima, Jezda, Jezdarica, Jezerka, Jeka, Jelača, Jelena, Jelenka,Jelika, Jelina, Jelisaveta, Jelica, Jelka, Jerina, Jerka, Jerosima, Jefa, Jefimija, Jefremija, Jefrojka, Jefrosima,Joanica, Jovana, Jovanka, Jovka, Jovna, Jovčica, Joka, Julijana,Kalina, Karanfila, Kata, Katava, Katalina, Katarina,Katica, Katuša, Kovana, Kovanija, Kovinka, Kovna, Kojana, Komlenija, Komljena, Komna, Kona, Koprena, Koruna, Kosa,Kosara,Košuta, Krasna, Kruna, Krunija, Ksenija, Kumrija, Kuna,Lava, Lazara, Lala, Lalica, Lamenka, Latinka, Lepava, Lilijana, Lozana, Lozna, Lucija"
+var nizZenskihImena=stringZenskaImena.split(", ");
+//console.log("duzina niza zenskih imena:  ",nizZenskihImena.length);
+
+var stringMuskihImena="Авакум, Аврам, Адам, Аксентије, Алекса, Александар, Алимпије, Анђелко, Андрија, Антоније, Аранђел, Арсеније, Атанасије, Аћим,Балша, Бане, Батрић, Берислав, Бериша, Берко, Благоје, Благомир, Благота, Блажо, Блашко, Богдан, Богић, Богобој, Богољуб, Богомир, Богосав, Борко, Божидар, Бојан, Борко, Боривој, Борисав, Борислав, Бориша, Бошко, Бранимир, Бранислав, Бранко, Братислав, Братољуб, Будимир, Будислав,Вајо, Василије, Васиљ, Векослав, Велибор, Велизар, Велимир, Велисав, Величко, Вељко, Верољуб, Веселин, Видак, Видоје, Виктор, Вилотије, Витомир, Вићентије, Вишеслав, Владан, Владета, Владимир, Владислав, Влајко, Властимир, Војимир, Војин, Војислав, Вујадин, Вук, Вукадин, Вукајло, Вукан, Вукашин, Вукмир, Вукоје, Вукосав, Вукота, Вуксан, Вучко,Гавра, Гаврило, Гвозден, Генадије, Георгије, Герасим, Герман, Глигорије, Гојко, Голуб, Горан, Градимир, Гргур, Глигорије, Гроздан, Груја, Грујица,Давид, Далибор, Дамјан, Данило, Дарко, Данојло, Десимир, Деспот, Димитрије, Димчо, Динко, Дмитар, Добрашин, Добривој, Добрило, Добрица, Добросав, Дојчин, Дојчило, Доротеј, Доситеј, Драган, Драгић, Драгиша, Драгоје, Драгољуб, Драгомир, Драгорад, Драгослав, Драгутин, Дражо, Драшко, Душан,Жарко, Желимир, Жељко, Живадин,Живан, Живанко, Живко, Живојин, Живомир, Живорад, Живота, Жика,Завиша, Зарија, Зарије, Здравко, Златибор, Златко, Златоје, Златомир, Златосав, Зоран, Зосим, Зринко,Иван, Ивица, Ивко, Иво, Игњат, Игњатије, Игор, Илија, Исаија, Исаило, Исак, Исидор,Јагош, Јаков, Јакша, Јанићије, Јанко, Јанча, Јеврем, Јевта, Јевтимије, Јездимир, Јеленко, Јелисије, Јеремија, Јеротије, Јован, Јовица, Јовиша, Јоксим, Јордан, Јосиф, Југомир, Југослав, Јулијан, Јустин,Каменко, Кипријан, Кирило, Којадин, Комнен, Константин, Корнелије, Косан, Коста, Костадин, Коча, Крсман, Крста, Крстан, Крстивоје, Куѕман,Лаза, Лазар, Лале, Леонтије, Лепоје, Лепомир, Лола, Лука,Љуба, Љубан, Љубивоје, Љубинко, Љубиша, Љубо, Љубомир, Љупче,Макарије, Максим, Манојло, Маријан, Маринко, Марко, Матеја, Матија, Мелентије, Методије, Мијаило, Мијалко, Мијат, Миладин, Милан, Миланко, Миле, Миленко, Милентије, Милета, Миливој, Милија, Милијан, Милинко, Милисав, Милић, Милован, Милоје, Милојко, Милорад, Милош, Милун, Милутин, Миодраг, Миомир, Мирко, Мирољуб, Мирослав, Мирчета, Митар, Михаило, Младен, Младомир, Мојсило, Младимир, Момир, Момчило, Моша";
+var nizMuskihImena=stringMuskihImena.split(", ");
+//console.log("duzina niza muskih imena:  ",nizMuskihImena.length);
+
+var stringImena=stringZenskaImena+stringMuskihImena;
+//console.log(stringImena);
+var nizImena=stringImena.split(", ");
+//console.log("sva imena niz: ",nizImena);
+
+function randomIme(params) {
+    if (params==1){
+        return nizMuskihImena[Math.floor(Math.random()*nizMuskihImena.length+1)]
+    }
+    else if (params==2){
+        return nizZenskihImena[Math.floor(Math.random()*nizZenskihImena.length+1)]
+
+    }
+    else   {
+        return nizImena[Math.floor(Math.random()*nizImena.length+1)]
+    } 
+}
+
+console.log("parametar 1 vraca musko: ",randomIme(1));
+console.log("parametar 2 vraca zensko: ",randomIme(2));
+console.log("nema parametra: ",randomIme(1));
+
+
+
+</script>
+
 </body>
 </html>
 
