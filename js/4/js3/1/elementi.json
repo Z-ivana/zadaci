@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Zadatak 4-js3-1</title>
-    <style>
-    td{min-width: 30px;height: 30px;}
-    </style>
-</head>
-<body>
-    <script>
-var nizElemenata=[
+
+[
 {"atomicNumber":1,"symbol":"H","name":"Hydrogen","atomicMass":"1.00794(4)","cpkHexColor":"FFFFFF","electronicConfiguration":"1s1","electronegativity":2.2,"atomicRadius":37,"ionRadius":"","vanDelWaalsRadius":120,"ionizationEnergy":1312,"electronAffinity":-73,"oxidationStates":"-1, 1","standardState":"gas","bondingType":"diatomic","meltingPoint":14,"boilingPoint":20,"density":0.0000899,"groupBlock":"nonmetal","yearDiscovered":1766},
 {"atomicNumber":2,"symbol":"He","name":"Helium","atomicMass":"4.002602(2)","cpkHexColor":"D9FFFF","electronicConfiguration":"1s2","electronegativity":"","atomicRadius":32,"ionRadius":"","vanDelWaalsRadius":140,"ionizationEnergy":2372,"electronAffinity":0,"oxidationStates":"","standardState":"gas","bondingType":"atomic","meltingPoint":"","boilingPoint":4,"density":0.0001785,"groupBlock":"noble gas","yearDiscovered":1868},
 {"atomicNumber":3,"symbol":"Li","name":"Lithium","atomicMass":"6.941(2)","cpkHexColor":"CC80FF","electronicConfiguration":"[He] 2s1","electronegativity":0.98,"atomicRadius":134,"ionRadius":"76 (+1)","vanDelWaalsRadius":182,"ionizationEnergy":520,"electronAffinity":-60,"oxidationStates":1,"standardState":"solid","bondingType":"metallic","meltingPoint":454,"boilingPoint":1615,"density":0.535,"groupBlock":"alkali metal","yearDiscovered":1817},
@@ -129,77 +119,3 @@ var nizElemenata=[
 {"atomicNumber":117,"symbol":"Ts","name":"Tennessine","atomicMass":[294],"cpkHexColor":"","electronicConfiguration":"[Rn] 5f14 6d10 7s2 7p5","electronegativity":"","atomicRadius":"","ionRadius":"","vanDelWaalsRadius":"","ionizationEnergy":"","electronAffinity":"","oxidationStates":"","standardState":"","bondingType":"","meltingPoint":"","boilingPoint":"","density":"","groupBlock":"post-transition metal","yearDiscovered":2010},
 {"atomicNumber":118,"symbol":"Og","name":"Oganesson","atomicMass":[294],"cpkHexColor":"","electronicConfiguration":"[Rn] 5f14 6d10 7s2 7p6","electronegativity":"","atomicRadius":"","ionRadius":"","vanDelWaalsRadius":"","ionizationEnergy":"","electronAffinity":"","oxidationStates":"","standardState":"","bondingType":"","meltingPoint":"","boilingPoint":"","density":"","groupBlock":"noble gas","yearDiscovered":2002}
 ]
-        
-/*Napravite periodni sistem koristeći podatke sa ovog linka https://github.com/andrejewski/periodic-table/blob/master/data.json 
-i/ili https://raw.githubusercontent.com/jwaitze/Chemistry-Calculations/master/periodic_table.json , ako nemate sve 
-podatke koji vam nedostaju ili vam se ne sviđa njihov format slobobno napravite svoju verziju. Krajnji rezultat treba 
-da izgleda minimum ovako https://en.wikipedia.org/wiki/Periodic_table#/media/File:Simple_Periodic_Table_Chart-en.svg a 
-ako možete da napravite da se još podataka prikazuje u osnovnoj verziji to je bonus
-Kada se klikne na bilo koji element trebalo bi da ispiše u praznomm prostoru u tabelu (između H i HE a iznad ostalih
- elemenata više podataka o kliknutom elementu)
-*/
-
-
-function kreirajTabelu(redova, kolona) {
-    let tabela = document.createElement("table");
-    tabela.setAttribute("border",1)
-    for (let i = 0; i < redova; i++) {
-        const newRow = document.createElement("tr");
-        for (let j = 0; j < kolona; j++) {
-            const newColumn = document.createElement("td");
-           newColumn.setAttribute("id", ""+ i+"_" + j);
-            newRow.appendChild(newColumn);
-        }
-        tabela.appendChild(newRow);
-    }
-    return tabela;
-}
-document.body.appendChild(kreirajTabelu(10, 19));
-
-document.getElementById("1_1").innerHTML=nizElemenata[0].atomicNumber+nizElemenata[0].symbol;
-
-
-document.getElementById("1_18").innerHTML=nizElemenata[1].atomicNumber+nizElemenata[1].symbol;
-
-for(var i=1;i<3;i++){
-     document.getElementById("2_"+i).innerHTML=nizElemenata[i+1].atomicNumber+nizElemenata[i+1].symbol;
-}
- 
-for(var i=13;i<19;i++){
-     document.getElementById("2_"+i).innerHTML=nizElemenata[i-9].atomicNumber+nizElemenata[i-9].symbol;
-}
-for(var i=1;i<3;i++){
-     document.getElementById("3_"+i).innerHTML=nizElemenata[i+9].atomicNumber+nizElemenata[i+9].symbol;
- }
- 
-for(var i=13;i<19;i++){
-     document.getElementById("3_"+i).innerHTML=nizElemenata[i-1].atomicNumber+nizElemenata[i-1].symbol;
-}
-
-    var dodajBroj=-4;
-    for(var j=4;j<=7;j++){
-        dodajBroj+=17;
-       
-        for(var i=1;i<=18; i++) {  
-            if((i+j+dodajBroj)==57 || (i+j+dodajBroj)==89){
-                dodajBroj+=14; 
-            }
-                document.getElementById(j+"_"+i).innerHTML =
-                nizElemenata[i+j+dodajBroj].atomicNumber+nizElemenata[i+j+dodajBroj].symbol;
-            }  
-        }
-
-    for(var j=4;j<18;j++){
-
-            document.getElementById("8_"+j).innerHTML = nizElemenata[j+53].atomicNumber+nizElemenata[j+54].symbol;  
-        
-    }  
-    for(var j=4;j<18;j++){
-
-            document.getElementById("9_"+j).innerHTML = nizElemenata[j+85].atomicNumber+nizElemenata[j+85].symbol;  
-        
-    }    
-    </script>
-    
-</body>
-</html>
